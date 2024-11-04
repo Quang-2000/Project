@@ -1,0 +1,15 @@
+.container{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.carousel-inner {
+    height: 600px;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%; 
+    object-fit: contain; 
+  }
+  
