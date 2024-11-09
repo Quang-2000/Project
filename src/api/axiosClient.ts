@@ -1,24 +1,27 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const axiosClient = axios.create({
-    baseURL: 'https://localhost:5001',
-    timeout: 1000,
-    headers: {'X-Custom-Header': 'foobar'}
-  });
+  baseURL: "http://localhost:5001/",
+  timeout: 5000,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
-axiosClient.interceptors.request.use(function (config) {
-    
+axiosClient.interceptors.request.use(
+  function (config) {
     return config;
-  }, function (error) {
-   
+  },
+  function (error) {
     return Promise.reject(error);
-  });
+  }
+);
 
-
-axiosClient.interceptors.response.use(function (response) {
-   
+axiosClient.interceptors.response.use(
+  function (response) {
     return response;
-  }, function (error) {
-    
+  },
+  function (error) {
     return Promise.reject(error);
-  });
+  }
+);

@@ -1,18 +1,21 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../stores/slices/productSlice";
 import { useEffect } from "react";
+import { RootState } from "../stores/store";
 
 const ProductsList = () => {
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
+  const { products } = useSelector((state: RootState) => state.productSlice);
   useEffect(() => {
     dispatch(fetchProducts());
-  }, [dispatch]);
+  }, []);
+  console.log(products);
   return (
     <div>
       <div className="products">
-        {products.map((product) => (
+        {products?.map((product: any) => (
           <div key={product.id} className="product-card">
-            <img src={product.imageUrl} alt={product.name} />
+            <img src={product.image} alt={product.name} />
             <h2>{product.name}</h2>
             <p>{`Price: $${product.price}`}</p>
           </div>
