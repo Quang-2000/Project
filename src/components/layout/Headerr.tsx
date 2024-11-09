@@ -51,10 +51,12 @@ const Headerr = () => {
             </Tooltip>
           </form>
         </div>
-        <div className="cart">
+        <div className="cart-logo">
           <Button className="button-cart" type="default">
             <Space>
-              <ShoppingCartOutlined />
+              <Link to="/cartPage">
+                <ShoppingCartOutlined />
+              </Link>
             </Space>
           </Button>
         </div>

@@ -46,9 +46,10 @@
     width: 500px !important;
   }
 
-  .cart {
+  .cart-logo {
     margin-top: 40px;
     margin-left: 100px;
+    margin-right: 20px;
     font-size: 20px;
   }
 

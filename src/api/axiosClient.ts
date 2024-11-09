@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const axiosClient = axios.create({
-    baseURL: 'https://localhost:5000',
+export const axiosClient = axios.create({
+    baseURL: 'https://localhost:5001',
     timeout: 1000,
     headers: {'X-Custom-Header': 'foobar'}
   });
@@ -17,7 +17,7 @@ axiosClient.interceptors.request.use(function (config) {
 
 axiosClient.interceptors.response.use(function (response) {
    
-    return response.data;
+    return response;
   }, function (error) {
     
     return Promise.reject(error);
